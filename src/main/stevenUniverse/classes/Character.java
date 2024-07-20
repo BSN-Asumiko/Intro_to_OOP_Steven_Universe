@@ -1,14 +1,16 @@
 package main.stevenUniverse.classes;
 
-public abstract class Character {
+public class Character {
     private String name;
     private String eyeColor;
     private String hairColor;
+    private String weapon;
     
-    public Character (String name, String eyeColor, String hairColor) {
+    public Character (String name, String eyeColor, String hairColor, String weapon) {
         this.name = name;
         this.eyeColor = eyeColor;
         this.hairColor = hairColor;
+        this.weapon = weapon;
     }
 
     public String makeFriends (String friendName) {
@@ -37,6 +39,14 @@ public abstract class Character {
 
     public void setHairColor(String hairColor) {
         this.hairColor = hairColor;
+    }
+    
+    public String getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(String weapon) {
+        this.weapon = weapon;
     }
 
 }

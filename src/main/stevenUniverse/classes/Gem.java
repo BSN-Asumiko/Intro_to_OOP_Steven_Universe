@@ -2,28 +2,34 @@ package main.stevenUniverse.classes;
 
 import main.stevenUniverse.interfaces.Battle;
 import main.stevenUniverse.interfaces.RegularActions;
+import main.stevenUniverse.utils.UtilityClass;
 
-public abstract class Gem extends Character implements RegularActions, Battle {
+public class Gem extends Character implements RegularActions, Battle {
 
     private String gemStone;
     private String gemType;
     private boolean isWhole;
 
-    public Gem  (String name, String eyeColor, String hairColor, String gemStone, String gemType,  boolean isWhole) {
-        super(name, eyeColor, hairColor);
+    public Gem  (String name, String eyeColor, String hairColor, String weapon, String gemStone, String gemType,  boolean isWhole) {
+        super(name, eyeColor, hairColor, weapon);
         this.gemStone = gemStone;
         this.gemType = gemType;
         this.isWhole = isWhole;
     }
 
-    public boolean breaking (boolean isWhole) {
+    
+    public String breaking (boolean isWhole) {
         if (isWhole) {
             isWhole = false;
+            setWhole(isWhole);
+            return "Oh no, it seems I got a fracture..";
+        } else {
+            return "I had a fracture before and now I'm breaking apart..";
         }
-        return isWhole;
+
     }
 
-    public String makeFusion (String name[], String fusionName) {
+    public String makeFusion (String name, String fusionName) {
         return "When I'm dancing with " + name + ", we form " + fusionName + "!";
     }
 
@@ -32,23 +38,26 @@ public abstract class Gem extends Character implements RegularActions, Battle {
         return broken;
     }
 
-    @Override 
-    public abstract String talk();
+    @Override
+    public String talk(String[] quotes) {
+        int quotePosition = UtilityClass.getRandomNumber(quotes.length);
+        return quotes[quotePosition];
+    }
     
     @Override
     public String greet () {
-        String greeting = "Hi! I'm " + getName() + ", nice to meet you! My gemstone is " + gemStone + ", I belong to " + gemType + " family. My eyes are " + getEyeColor() + "and my hair is " + getHairColor();
+        String greeting = "Hi! I'm " + getName() + ", nice to meet you! My gemstone is " + gemStone + ", I belong to " + gemType + " family. My eyes are " + getEyeColor() + " and my hair is " + getHairColor() + ".";
         return greeting;
     }
 
     @Override 
-    public String haveWeapon (String weapon) {
-        return "My weapon is " + weapon + ".";
+    public String haveWeapon () {
+        return "My weapon is " + getWeapon() + ".";
     }
 
     @Override 
-    public String fight(String names[]) {
-        return names[0] + " and " + names[1] + " are fighting. Who is going to win?";
+    public String fight(String opponentName) {
+        return getName() + " and " + opponentName + " are fighting. Who is going to win?";
     }
 
     public String getGemStone() {
@@ -70,6 +79,11 @@ public abstract class Gem extends Character implements RegularActions, Battle {
     public boolean getIsWhole() {
         return isWhole;
     }
+
+    public void setWhole(boolean isWhole) {
+        this.isWhole = isWhole;
+    }
+
 
 
 }
