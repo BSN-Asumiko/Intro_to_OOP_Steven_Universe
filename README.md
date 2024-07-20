@@ -14,6 +14,7 @@ The tasks were:
 2. [Installation](#installation)
 3. [Contributing](#contributing)
 4. [Contact Information](#contact-information)
+5. [Aknowledge](#aknowledge)
 
 ## Description
 
@@ -61,6 +62,10 @@ You can fork this repo for make any changes you'd like to
 
 Name: Ekaterina Buinovskaia
 GitGub: @BSN-Asumiko
+
+## Aknowledge
+
+All information abour characters was taken from https://steven-universe.fandom.com/wiki/Steven_Universe_Wiki
 
 
 
