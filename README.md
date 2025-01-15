@@ -1,4 +1,4 @@
-# Taller de Introducción a Programación Orientada a Objetos (POO)
+# Introduction to Object-Oriented Programming (OOP) Workshop
 
 This workshop was a part of BootCamp (FemCoders from Factoria F5) learning. It's objective was to learn the basic concepts of Object-Oriented Programming (OOP)  through the development of a Java project based on a chosen theme and my choice was "Steven Universe" series.
 
